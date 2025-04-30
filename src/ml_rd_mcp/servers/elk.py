@@ -1,4 +1,5 @@
 import json
+import os
 from abc import ABC, abstractmethod
 from typing import Optional, Union
 
@@ -40,6 +41,16 @@ class ELKFastMCPOpenAPI(FastMCPOpenAPI, ABC):
     def openapi_default_url(self) -> str:
         """Default URL for the OpenAPI specification."""
 
+    @property
+    @abstractmethod
+    def client_url_env(self) -> str:
+        """Environment variable name for the ELK URL."""
+
+    @property
+    def client_api_key_env(self) -> str:
+        """Environment variable name for the ELK API key."""
+        return "ELASTIC_API_KEY"
+
     def _load_openapi_spec(self, openapi_spec: Optional[Union[str, dict]]) -> dict:
         openapi_spec = openapi_spec or self.openapi_default_url
         if isinstance(openapi_spec, str):
@@ -55,6 +66,13 @@ class ELKFastMCPOpenAPI(FastMCPOpenAPI, ABC):
                     return json.load(f)
         return openapi_spec
 
-    @abstractmethod
     def _get_default_client(self) -> httpx.AsyncClient:
-        """Create a default HTTP client for the OpenAPI server."""
+        ELASTIC_URL = os.getenv(self.client_url_env)
+        ELASTIC_API_KEY = os.getenv(self.client_api_key_env)
+
+        headers = {"Authorization": f"ApiKey {ELASTIC_API_KEY}"}
+        return httpx.AsyncClient(
+            base_url=ELASTIC_URL,
+            headers=headers,
+            verify=True,
+        )

@@ -1,19 +1,22 @@
+import warnings
+
 from typing_extensions import override
 
 from ml_rd_mcp.servers.elk import ELKFastMCPOpenAPI
 
 
-class ESFastMCPOpenAPI(ELKFastMCPOpenAPI):
+class KibanaFastMCPOpenAPI(ELKFastMCPOpenAPI):
     """FastMCP OpenAPI server for Elasticsearch."""
 
     @override
     @property
     def openapi_default_url(self) -> str:
         """Default URL for the OpenAPI specification."""
-        return "https://www.elastic.co/docs/api/doc/elasticsearch.yaml"
+        warnings.warn("Kibana's OpenAPI specification is malformed", UserWarning, stacklevel=2)
+        return "https://www.elastic.co/docs/api/doc/kibana.yaml"
 
     @override
     @property
     def client_url_env(self) -> str:
         """Environment variable name for the ELK URL."""
-        return "ELASTICSEARCH_URL"
+        return "KIBANA_URL"
