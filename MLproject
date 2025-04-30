@@ -1,0 +1,9 @@
+# https://mlflow.org/docs/latest/projects.html
+
+name: ML ES OpenAPI MCP server
+python_env: python_env.yaml
+entry_points:
+  main:
+    parameters:
+      job: string
+    command: "PYTHONPATH=src python -m ml_rd_mcp {job}"
