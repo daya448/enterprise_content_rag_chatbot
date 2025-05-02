@@ -6,7 +6,7 @@ include_ml_utils: false
 license: MIT
 mlflow_version: ''
 name: ML ES OpenAPI MCP server
-package: ml_rd_mcp
+package: elastic_fastmcp
 python_version: '3.10'
 repository: ml-rnd-mcp
 sonarqube_project_key: ''

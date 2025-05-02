@@ -1,6 +1,6 @@
 from typing_extensions import override
 
-from ml_rd_mcp.servers.elk import ELKFastMCPOpenAPI
+from elastic.mcp.fastmcp.servers.elk import ELKFastMCPOpenAPI
 
 
 class ESFastMCPOpenAPI(ELKFastMCPOpenAPI):

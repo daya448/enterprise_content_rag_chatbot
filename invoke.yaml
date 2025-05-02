@@ -4,5 +4,5 @@ run:
   echo: true
 project:
   name: ML ES OpenAPI MCP server
-  package: ml_rd_mcp
+  package: elastic_fastmcp
   repository: ml-rnd-mcp

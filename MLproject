@@ -6,4 +6,4 @@ entry_points:
   main:
     parameters:
       job: string
-    command: "PYTHONPATH=src python -m ml_rd_mcp {job}"
+    command: "PYTHONPATH=src python -m elastic_fastmcp {job}"

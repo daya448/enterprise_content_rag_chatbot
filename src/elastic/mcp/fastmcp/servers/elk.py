@@ -5,6 +5,7 @@ from typing import Optional, Union
 
 import httpx
 import yaml
+
 from fastmcp.server.openapi import FastMCPOpenAPI
 
 

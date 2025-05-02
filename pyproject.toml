@@ -11,7 +11,7 @@ documentation = "https://elastic.github.io/ml-rnd-mcp/"
 authors = ["elastic"]
 readme = "README.md"
 license = "MIT"
-packages = [{ include = "ml_rd_mcp", from = "src" }]
+packages = [{ include = "elastic/mcp/fastmcp", from = "src" }]
 
 # DEPENDENCIES
 
