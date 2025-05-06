@@ -67,7 +67,7 @@ class AnthropicChat:
 
                     # Execute tool call
                     result = await self.client.call_tool_mcp(tool_name, tool_args)
-                    print(f"[Tool call]: {tool_name} with args {tool_args}]")
+                    print(f"[Tool call]: {tool_name} with args {tool_args}")
                     assistant_message_content.append(content)
                     if self.print_tool_results:
                         for tool_result in result.content:

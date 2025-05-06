@@ -8,6 +8,8 @@ from elastic.mcp.fastmcp import ESFastMCPOpenAPI
 
 load_dotenv()
 
+# Replicates typescript version https://github.com/elastic/mcp-server-elasticsearch
+
 # One can remap resources to be tools, or vice versa
 custom_maps = [
     # Force all _mapping endpoints to be Tools
