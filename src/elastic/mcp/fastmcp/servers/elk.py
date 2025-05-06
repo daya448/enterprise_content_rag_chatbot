@@ -54,15 +54,25 @@ class ELKFastMCPOpenAPI(FastMCPOpenAPI, ABC):
 
     def _load_openapi_spec(self, openapi_spec: Optional[Union[str, dict]]) -> dict:
         openapi_spec = openapi_spec or self.openapi_default_url
+        if not isinstance(openapi_spec, dict):
+            openapi_spec = str(openapi_spec)
+
+        is_str = isinstance(openapi_spec, str)
+        is_yaml = is_str and (openapi_spec.endswith((".yaml", ".yml")))
+        is_json = is_str and openapi_spec.endswith(".json")
+
         if isinstance(openapi_spec, str):
             if openapi_spec.startswith("http"):
                 response = httpx.get(openapi_spec)
                 response.raise_for_status()
-                return yaml.safe_load(response.text)
-            if openapi_spec.endswith(".yaml"):
+                if is_yaml:
+                    return yaml.safe_load(response.text)
+                if is_json:
+                    return response.json()
+            if is_yaml:
                 with open(openapi_spec) as f:
                     return yaml.safe_load(f)
-            if openapi_spec.endswith(".json"):
+            if is_json:
                 with open(openapi_spec) as f:
                     return json.load(f)
         return openapi_spec

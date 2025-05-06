@@ -9,6 +9,6 @@ name: ML ES OpenAPI MCP server
 package: elastic_fastmcp
 python_version: '3.10'
 repository: ml-rnd-mcp
-sonarqube_project_key: ''
+sonarqube_project_key: 'elastic_elastic-fastmcp-server_fbe99cff-82d5-4538-9bd0-f695685b9009'
 user: elastic
 version: 0.1.0
