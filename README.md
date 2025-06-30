@@ -5,7 +5,7 @@ This project is an enterprise-ready Retrieval-Augmented Generation (RAG) assista
 - **Backend Server (MCP Server)**: FastAPI-based server for content search (Elasticsearch via `server.py`). **This server is sourced from the [Elastic fastmcp-server repository](https://github.com/elastic/elastic-fastmcp-server)** and is required to run this project. You must have this server running for the chatbot to function.
 - **Chatbot UI**: Chainlit-based conversational interface powered by LangChain and Azure OpenAI.
 
-   ![Chainlit UI Screenshot](./images/chatbot_ui.jpg)
+   ![Chainlit UI Screenshot](./images/chatbot_ui.png)
 
 ---
 
