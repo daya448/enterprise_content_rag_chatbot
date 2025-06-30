@@ -1,0 +1,174 @@
+{
+  "5b75e669-3716-4936-baaa-8a5c18deed14": {
+    "id": "5b75e669-3716-4936-baaa-8a5c18deed14",
+    "title": "Conversation 1",
+    "created_at": "2025-06-26T17:13:46.858776",
+    "last_updated": "2025-06-26T17:13:46.858781",
+    "messages": []
+  },
+  "e1787b60-8f0f-4d1a-b758-ec31e25e7ee1": {
+    "id": "e1787b60-8f0f-4d1a-b758-ec31e25e7ee1",
+    "title": "Conversation 2",
+    "created_at": "2025-06-26T17:13:51.147725",
+    "last_updated": "2025-06-26T17:13:51.147742",
+    "messages": []
+  },
+  "7d2df501-a80a-4f5a-8307-e36f97eb219e": {
+    "id": "7d2df501-a80a-4f5a-8307-e36f97eb219e",
+    "title": "Conversation 3",
+    "created_at": "2025-06-26T17:13:55.578975",
+    "last_updated": "2025-06-26T17:13:55.578995",
+    "messages": []
+  },
+  "a4ffb28d-335e-4f0e-8285-085ad7e2d3e0": {
+    "id": "a4ffb28d-335e-4f0e-8285-085ad7e2d3e0",
+    "title": "Conversation 4",
+    "created_at": "2025-06-26T17:13:59.629016",
+    "last_updated": "2025-06-26T17:13:59.629026",
+    "messages": []
+  },
+  "74281788-68b2-40f2-b188-d38d92fee212": {
+    "id": "74281788-68b2-40f2-b188-d38d92fee212",
+    "title": "Conversation 5",
+    "created_at": "2025-06-26T17:14:01.352739",
+    "last_updated": "2025-06-26T17:14:01.352750",
+    "messages": []
+  },
+  "d8bd2e0f-5739-42f3-9ea7-2bdbffffbf37": {
+    "id": "d8bd2e0f-5739-42f3-9ea7-2bdbffffbf37",
+    "title": "hi",
+    "created_at": "2025-06-26T17:14:10.668147",
+    "last_updated": "2025-06-26T17:15:24.446478",
+    "messages": [
+      {
+        "timestamp": "2025-06-26T17:14:13.924829",
+        "user_message": "hi",
+        "assistant_response": "Hello! How can I assist you today?"
+      },
+      {
+        "timestamp": "2025-06-26T17:14:17.145661",
+        "user_message": "how are you",
+        "assistant_response": "I'm just a virtual assistant, but I'm here and ready to help you! How can I assist you today?"
+      },
+      {
+        "timestamp": "2025-06-26T17:14:23.626310",
+        "user_message": "how is the weather today",
+        "assistant_response": "I cannot provide real-time weather updates. Please check a weather service or app for the current weather in your location."
+      },
+      {
+        "timestamp": "2025-06-26T17:14:30.123393",
+        "user_message": "who is sachiin",
+        "assistant_response": "No relevant information was found."
+      },
+      {
+        "timestamp": "2025-06-26T17:14:38.844815",
+        "user_message": "who is sachin",
+        "assistant_response": "No relevant information was found."
+      },
+      {
+        "timestamp": "2025-06-26T17:14:46.882650",
+        "user_message": "who is John",
+        "assistant_response": "John Doe is currently assigned to the task 'Implement Enterprise Search API' within the Enterprise Search project. This task involves creating core API endpoints for enterprise search functionality, including features such as filtering, relevance scoring, type-ahead suggestions, and support for multiple data sources. The task is labeled as high priority and is currently in progress."
+      },
+      {
+        "timestamp": "2025-06-26T17:14:57.459183",
+        "user_message": "how many jira issues we have",
+        "assistant_response": "Based on the company documentation, there are currently a total of 6 Jira issues."
+      },
+      {
+        "timestamp": "2025-06-26T17:15:07.932803",
+        "user_message": "what jira issue each of them is leading",
+        "assistant_response": "The Jira issues and their leads are as follows:\n\n1. John Doe is leading the task 'Implement Enterprise Search API' within the Enterprise Search project, focusing on creating core API endpoints for enterprise search functionality.\n2. No further leads or assignments are explicitly mentioned for other Jira issues in the available information."
+      },
+      {
+        "timestamp": "2025-06-26T17:15:24.446466",
+        "user_message": "what jira is Sarah looking at",
+        "assistant_response": "Sarah Johnson is assigned to the Jira issue titled 'Review API Security Implementation' (SEC-201). This issue involves a security review of the new API implementation for enterprise search, focusing on authentication, authorization, rate limiting, security headers, audit logging, and other security measures."
+      }
+    ]
+  },
+  "831086b6-f1b4-465a-aa86-39b942118036": {
+    "id": "831086b6-f1b4-465a-aa86-39b942118036",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:18:45.290699",
+    "last_updated": "2025-06-26T17:18:45.290705",
+    "messages": []
+  },
+  "e5bee205-030d-449a-abef-dad4923e24ef": {
+    "id": "e5bee205-030d-449a-abef-dad4923e24ef",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:18:52.559132",
+    "last_updated": "2025-06-26T17:18:52.559148",
+    "messages": []
+  },
+  "2837878f-33a8-420d-80fd-24d4e2fefd21": {
+    "id": "2837878f-33a8-420d-80fd-24d4e2fefd21",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:18:53.962482",
+    "last_updated": "2025-06-26T17:18:53.962499",
+    "messages": []
+  },
+  "d8b73038-c128-43ca-a72b-8a808ad11c89": {
+    "id": "d8b73038-c128-43ca-a72b-8a808ad11c89",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:14.380241",
+    "last_updated": "2025-06-26T17:19:14.380248",
+    "messages": []
+  },
+  "673af0c0-1fd3-4a10-a28d-ef2e95952fab": {
+    "id": "673af0c0-1fd3-4a10-a28d-ef2e95952fab",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:16.916570",
+    "last_updated": "2025-06-26T17:19:16.916580",
+    "messages": []
+  },
+  "67e4103d-d1f6-4bc6-aaa4-ccabd65dd20e": {
+    "id": "67e4103d-d1f6-4bc6-aaa4-ccabd65dd20e",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:20.497928",
+    "last_updated": "2025-06-26T17:19:20.497940",
+    "messages": []
+  },
+  "518b31d0-ab3e-4888-8e40-ab82c082ac8c": {
+    "id": "518b31d0-ab3e-4888-8e40-ab82c082ac8c",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:31.369888",
+    "last_updated": "2025-06-26T17:19:31.369893",
+    "messages": []
+  },
+  "1ebc7090-bdbc-45c9-9c7e-507960380c4a": {
+    "id": "1ebc7090-bdbc-45c9-9c7e-507960380c4a",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:34.930205",
+    "last_updated": "2025-06-26T17:19:34.930220",
+    "messages": []
+  },
+  "a086dcc6-d1b4-4526-87d9-06330eebc4c8": {
+    "id": "a086dcc6-d1b4-4526-87d9-06330eebc4c8",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:40.623357",
+    "last_updated": "2025-06-26T17:19:40.623363",
+    "messages": []
+  },
+  "d30080a2-a375-49a0-be8f-4834f968e482": {
+    "id": "d30080a2-a375-49a0-be8f-4834f968e482",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:46.363823",
+    "last_updated": "2025-06-26T17:19:46.363830",
+    "messages": []
+  },
+  "093509c4-a550-416f-8b87-a1bb2a3c74c3": {
+    "id": "093509c4-a550-416f-8b87-a1bb2a3c74c3",
+    "title": "New Chat",
+    "created_at": "2025-06-26T17:19:52.527908",
+    "last_updated": "2025-06-26T17:19:52.527913",
+    "messages": []
+  },
+  "00d3a54b-e3e7-432e-8381-913024d50b53": {
+    "id": "00d3a54b-e3e7-432e-8381-913024d50b53",
+    "title": "Conversation 18",
+    "created_at": "2025-06-26T17:19:56.258132",
+    "last_updated": "2025-06-26T17:19:56.258140",
+    "messages": []
+  }
+}

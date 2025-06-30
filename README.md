@@ -1,86 +1,139 @@
-# ELK FastMCP server(s)
+# Enterprise Content RAG Assistant
 
-/!\ Experimental /!\
+This project is an enterprise-ready Retrieval-Augmented Generation (RAG) assistant that leverages company documentation and knowledge bases (Jira, Confluence, SharePoint, etc.) to answer user queries using advanced search and LLMs. It consists of two main components:
 
-[![ci.yml](https://github.com/elastic/mvp-mlops-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/elastic/mvp-mlops-platform/actions/workflows/ci.yml)
-![Powered by fastmcp](https://img.shields.io/badge/Powered%20by-fastmcp-blue)
+- **Backend Server**: FastAPI-based server for content search (Elasticsearch via `server.py`).
+- **Chatbot UI**: Chainlit-based conversational interface powered by LangChain and Azure OpenAI.
 
+---
 
-Model Context Protocol (MCP) server for Elasticsearch built through the OpenAPI specification using [FastMCP](https://github.com/jlowin/fastmcp).
+## Features
+- Conversational search over enterprise content indices
+- Uses Azure OpenAI for LLM-powered answers
+- Step-by-step agent reasoning and search transparency
+- Memory for chat context and follow-up questions
 
+---
 
-# Installation
-We don't have a PyPI package yet, but you can install the package through `git+ssh`
+## Requirements
+- Python 3.10+
+- [Poetry](https://python-poetry.org/) for dependency management
+- Access to Azure OpenAI (API key, endpoint, deployment)
+- Elasticsearch backend with content indices (e.g., `content-jira`, `content-confluence`, `content-sharepoint`)
+
+---
+
+## Setup
+
+1. **Clone the repository**
 
 ```bash
-pip install git+ssh://git@github.com/elastic/elastic-fastmcp-server.git
+git clone <repo-url>
+cd enterprise_content_rag_assistant/chatbot_assistant
 ```
 
-# Example:
+2. **Install dependencies**
 
-Starting the server is as simple as
-```python
-from fastmcp.server.openapi import RouteMap, RouteType
-from elastic.mcp.fastmcp import ESFastMCPOpenAPI
-
-# One can remap resources to be tools, or vice versa
-custom_maps = [
-    # Force all endpoints to be Tools
-    RouteMap(methods=["GET"], pattern=r".*", route_type=RouteType.TOOL),
-]
-mcp = ESFastMCPOpenAPI(route_maps=custom_maps)
-
-if __name__ == "__main__":
-    # Initialize the client
-    mcp.run(transport="sse", host="localhost", port=8000)
-```
-Your credentials will be read from environment variables
-```bash
-ELASTICSEARCH_URL=https://<your cluster>:<your url>
-ELASTIC_API_KEY=<your ES api key>
-```
-
-Head to [`scripts/chat`](scripts/chat) for a basic implementation example on how to spin up the server (`python server.py`) and a chat session (`python main.py`) using Anthropic Bedrock that you can modify to your own needs.
-
-## Available Servers:
-
-**Working**: ElasticSearch
-
-**Planned**: Kibana, Logstash
-
-
-# Developers
-
-## Installation
-
-We use the package manager [Poetry](https://python-poetry.org/). Follow [these instructions](https://python-poetry.org/docs/#installation) to install it.
-
-Install the virtual environment:
 ```bash
 poetry install
 ```
 
-Install [pre-commit hooks](https://pre-commit.com/):
+3. **Configure environment variables**
+
+Copy the sample env file and fill in your credentials:
 
 ```bash
-poetry run invoke installs.pre-commit
+cp .env\ copy.sample .env
 ```
 
-## Tests
+Edit `.env` and set the following (example):
 
-We use [pytest](https://docs.pytest.org/en/stable/) and [nox](https://nox.thea.codes/en/stable/) to run the tests:
+```
+AZURE_OPENAI_API_KEY=your-azure-openai-key
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
+AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+AZURE_OPENAI_API_VERSION=2023-05-15
+```
 
-To run the tests with the default Python and dependency versions:
+---
+
+## How to Run
+
+### 1. Start the Backend Server
+
+The backend server must be started first. It exposes the content search API used by the chatbot.
 
 ```bash
-poetry run invoke testing.test-default-versions
+poetry run python mcp-server-elasticsearch/chat/server.py
 ```
 
-To run the tests with the dependency versions matrix:
+This will start the server on `localhost:8000` (default).
+
+### 2. Start the Chatbot (Chainlit App)
+
+In a new terminal, run:
 
 ```bash
-poetry run invoke testing.test-matrix-versions
+poetry run chainlit run chatbot/chainlit_app.py --port 8001 --watch
 ```
 
-## Relevant links
-- [SonarQube project](https://sonar.elastic.dev/dashboard?id=)
+- The chatbot UI will be available at [http://localhost:8001](http://localhost:8001)
+- The app will auto-reload on code changes with `--watch`
+
+---
+
+## One-Click Start Script
+
+For convenience, you can use the following script to start both services (requires `bash`):
+
+Create a file named `start_all.sh` in the project root with:
+
+```bash
+#!/bin/bash
+# Start backend server
+poetry run python mcp-server-elasticsearch/chat/server.py &
+SERVER_PID=$!
+# Wait a few seconds for the server to start
+sleep 3
+# Start Chainlit app
+poetry run chainlit run chatbot/chainlit_app.py --port 8001 --watch
+# When Chainlit exits, stop the server
+kill $SERVER_PID
+```
+
+Make it executable:
+
+```bash
+chmod +x start_all.sh
+```
+
+Then run:
+
+```bash
+./start_all.sh
+```
+
+---
+
+## Project Structure
+
+- `chatbot/chainlit_app.py` — Chainlit UI app
+- `chatbot/langchain_agent.py` — LangChain agent logic
+- `mcp-server-elasticsearch/chat/server.py` — Backend search server
+- `src/elastic/mcp/fastmcp/` — Core backend logic
+
+---
+
+## Testing
+
+Run tests with:
+
+```bash
+poetry run pytest
+```
+
+---
+
+## License
+
+See [LICENCE.txt](LICENCE.txt)
